@@ -1,18 +1,21 @@
-.home-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* two equal halves */
-    grid-template-rows: 1fr 1fr; /* two equal rows */
-    grid-template-areas:
-      "left right-top"
-      "left right-bottom";
-    gap: 16px;
-    align-items: stretch;
-    justify-items: stretch;
-    height: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "left right-top"
+    "left right-bottom";
+  gap: 16px;
+  align-items: stretch;
+  justify-items: stretch;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-/* Dictionary Section */
+
+/* ==================
+   Dictionary Section
+   ================== */
 .div1 {
   grid-area: left;
   width: 100%;
@@ -21,7 +24,7 @@
   box-sizing: border-box;
   position: relative;
   background: #708993;
-  overflow: hidden; /* ✅ no scrollbars */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,18 +37,17 @@
   border: 2px solid #708993;
 }
 
-/* Title section */
 .dict-title-section {
+  position: absolute;
   top: 0;
   right: 0;
-  padding: 10px 6px;
-  position: absolute;
   width: 170px;
   height: 50px;
+  padding: 10px 6px;
+  background-color: black;
   border-bottom-left-radius: 20px;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
-  background-color: black;
   z-index: 2;
 }
 
@@ -53,11 +55,11 @@
   color: #708993;
   font-weight: 900;
   font-size: 30px;
+  padding-top: 6px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
 }
 
-/* Welcome Section */
 .welcome-section {
   display: flex;
   flex-direction: column;
@@ -67,16 +69,14 @@
   position: relative;
 }
 
-/* Dictionary Image */
 .dictPic {
   width: 360px;
-  height: auto;
   max-width: 100%;
+  height: auto;
   border-radius: 20px;
   object-fit: contain;
 }
 
-/* Quote */
 .dict-quote {
   text-align: center;
   color: #E7F2EF;
@@ -88,7 +88,6 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Open Button */
 .dict-open-btn {
   background: black;
   color: #E7F2EF;
@@ -100,13 +99,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .dict-open-btn:hover {
   background-color: #708993;
   color: black;
   border: 2px solid black;
 }
 
-/* Dictionary Wrapper */
 .dictionary-wrapper {
   width: 100%;
   height: 100%;
@@ -119,355 +118,344 @@
   position: absolute;
   top: 15px;
   right: 15px;
+  width: 36px;
+  height: 36px;
   border: none;
   background: rgba(255, 255, 255, 0.9);
   color: #000;
   border-radius: 50%;
   cursor: pointer;
   z-index: 3;
-  width: 36px;
-  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   transition: all 0.3s ease;
 }
+
 .dictionary-wrapper .close-btn:hover {
   background: black;
   color: white;
   transform: scale(1.1);
 }
 
-/* Content inside dictionary (scrolls) */
 .dict-content {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow-y: auto; /* ✅ internal scrolling */
-  /* padding: 16px; */
+  overflow-y: auto;
   box-sizing: border-box;
   z-index: 1;
 }
 
+/* ==================
+   Translator Section
+   ================== */
+.div2 {
+  grid-area: right-top;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+  font-family: Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #708993;
+  border: 2px solid #708993;
+}
+
+.div2.with-background {
+  background-color: #708993;
+}
+
+.translator-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+.translator-content {
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.trans-title-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 170px;
+  height: 50px;
+  padding: 10px 6px;
+  background-color: black;
+  border-bottom-left-radius: 20px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  z-index: 2;
+}
+
+.trans-title {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #708993;
+  font-weight: 900;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.translator-welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.translatorPic {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.translator-open-btn {
+  background: black;
+  color: #E7F2EF;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid #708993;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.translator-open-btn:hover {
+  background: #708993;
+  color: black;
+  border: 2px solid black;
+}
+
+.translator-wrapper .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.translator-wrapper .close-btn:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ==================
+   Third Section
+   ================== */
+.div3 {
+  grid-area: right-bottom;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #e5e7eb;
+  border-radius: 15px;
+  box-sizing: border-box;
+  overflow: auto;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
 /* =====================
-   RESPONSIVE BEHAVIOR
+   RESPONSIVE STYLES
    ===================== */
 
-/* 📱 Small screens (≤480px) */
-@media (max-width: 480px) {
-  .dict-title-section {
-    width: 120px;
-    height: 40px;
-    padding-top: 8px;
-    border-bottom-left-radius: 12px;
-  }
-  .dict-title {
-    font-size: 20px;
-  }
-  .dictPic {
-    width: 160px;
-    height: auto;
-  }
-  .dict-quote {
-    font-size: 14px;
-    max-width: 220px;
-  }
-  .dict-open-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
-
-/* 📱 Tablets (481px–768px) */
+/* Mobile: up to 768px */
 @media (max-width: 768px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "left"
+      "right-top"
+      "right-bottom";
+  }
+
+  /* Dictionary styles */
+  .div1 {
+    padding: 30px 15px;
+  }
+
   .dict-title-section {
-    width: 150px;
+    width: 130px;
     height: 45px;
+    /* padding: 8px 6px; */
     border-bottom-left-radius: 15px;
   }
-  .dict-title {
-    font-size: 24px;
-  }
-  .dictPic {
-    width: 220px;
-    height: auto;
-  }
-  .dict-quote {
-    font-size: 16px;
-  }
-  .dict-open-btn {
-    padding: 12px 28px;
-    font-size: 16px;
-  }
-}
 
-/* 💻 Small laptops (769px–1024px) */
-@media (max-width: 1024px) {
-  .dict-title-section {
-    width: 160px;
-    height: 48px;
-  }
   .dict-title {
     font-size: 26px;
+    padding-top: 6px;
   }
-}
 
+  .welcome-section {
+    gap: 16px;
+  }
 
-/* .dict-favorites{
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-} */
-/* Div2: acts only as a shell, no scrollbars here */
-.div2 {
-    grid-area: right-top;
-    width: 100%;
-    height: 100%; /* take available grid space */
-    border-radius: 20px;
-    box-sizing: border-box;
-    position: relative;
-    font-family: Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* ❌ no scrollbars here */
-    background-color: #708993; /* keep default bg */
-    border: 2px solid #708993;
+  .dictPic {
+    width: 200px;
   }
-  
-  /* Open translator mode */
-  .div2.with-background {
-    background-color: #708993;
+
+  .dict-quote {
+    font-size: 16px;
+    max-width: 280px;
   }
-  
-  /* Translator wrapper fills entire div2 */
-  .translator-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #fff; /* when opened */
-    position: relative;
-  }
-  
-  /* Translator content scrolls internally */
-  .translator-content {
-    flex: 1;
-    overflow-y: auto; /* ✅ scrollbar only here */
-    /* padding: 16px; */
-    box-sizing: border-box;
-  }
-  
-  /* Title section (top ribbon) */
-  .trans-title-section {
-    top: 0;
-    right: 0;
-    padding: 10px 6px;
-    position: absolute;
-    width: 170px;
-    height: 50px;
-    border-bottom-left-radius: 20px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: black;
-    z-index: 2;
-  }
-  
-  .trans-title {
-    color: #708993;
-    font-weight: 900;
-    font-size: 30px;
-    text-align: center;
-  }
-  
-  /* Welcome screen before opening */
-  .translator-welcome-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Translator image */
-  .translatorPic {
-    width: 260px;
-    height: auto;
-    max-width: 100%;
-    object-fit: contain;
-  }
-  
-  /* Translator open button */
-  .translator-open-btn {
-    background: black;
-    color: #E7F2EF;
+
+  .dict-open-btn {
     padding: 12px 30px;
-    font-size: 18px;
-    font-weight: 700;
-    border: 2px solid #708993;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 16px;
   }
-  .translator-open-btn:hover {
-    background: #708993;
-    color: black;
-    border: 2px solid black;
+
+  .dictionary-wrapper .close-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
   }
-  
-  /* Close button */
+
+  /* Translator styles */
+  .trans-title-section {
+    width: 130px;
+    height: 45px;
+    /* padding: 8px 6px; */
+    border-bottom-left-radius: 15px;
+  }
+
+  .trans-title {
+    font-size: 26px;
+    padding-top: 6px;
+  }
+
+  .translator-welcome-section {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .translatorPic {
+    width: 200px;
+  }
+
+  .translator-open-btn {
+    padding: 12px 26px;
+    font-size: 16px;
+  }
+
   .translator-wrapper .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    border: none;
-    background: rgba(255, 255, 255, 0.9);
-    color: #000;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 3;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    transition: all 0.3s ease;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
   }
-  .translator-wrapper .close-btn:hover {
-    background: #000;
-    color: #fff;
-    transform: scale(1.1);
-  }
-  
-  /* =====================
-     RESPONSIVE BEHAVIOR
-     ===================== */
-  
-  /* Small screens */
-  @media (max-width: 480px) {
-    .trans-title-section {
-      width: 130px;
-      height: 40px;
-    }
-    .trans-title {
-      font-size: 20px;
-    }
-    .translatorPic {
-      width: 180px;
-    }
-    .translator-open-btn {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
-  }
-  
-  /* Tablets */
-  @media (max-width: 768px) {
-    .trans-title-section {
-      width: 150px;
-      height: 45px;
-    }
-    .trans-title {
-      font-size: 24px;
-    }
-    .translatorPic {
-      width: 220px;
-    }
-    .translator-open-btn {
-      padding: 12px 24px;
-      font-size: 16px;
-    }
-  }
-  
-
-.div3{
-    grid-area: right-bottom;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #e5e7eb;
-    border-radius: 15px;
-    box-sizing: border-box;
-    overflow: auto;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .home-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas:
-            "left"
-            "right-top"
-            "right-bottom";
-    }
-    
-    .div1 {
-        padding: 20px 15px;
-    }
-    
-    .dictPic {
-        width: 140px;
-        height: 140px;
-    }
-    
-    .dict-quote {
-        font-size: 16px;
-        max-width: 250px;
-    }
-    
-    .dict-open-btn {
-        padding: 14px 28px;
-        font-size: 16px;
-    }
-}
-/* 📱 Small screens (≤480px) */
+/* Small Mobile: up to 480px */
 @media (max-width: 480px) {
-    .dict-title-section {
-      width: 120px;
-      height: 50px;
-      padding-top: 12px;
-      border-bottom-left-radius: 12px;
-    }
-  
-    .dict-title {
-      font-size: 20px;
-    }
+  /* Dictionary styles */
+  .div1 {
+    padding: 20px 12px;
   }
-  
-  /* 📱 Tablets (481px–768px) */
-  @media (max-width: 768px) {
-    .dict-title-section {
-      width: 150px;
-      height: 60px;
-      padding-top: 15px;
-      border-bottom-left-radius: 15px;
-    }
-  
-    .dict-title {
-      font-size: 28px;
-    }
+
+  .dict-title-section {
+    width: 120px;
+    height: 43px;
+    /* padding: 6px 4px; */
+    border-bottom-left-radius: 12px;
   }
-  
-  /* 💻 Small laptops (769px–1024px) */
-  @media (max-width: 1024px) {
-    .dict-title-section {
-      width: 120px;
-      height: 43px;
-    }
-  
-    .dict-title {
-      font-size: 24px;
-    }
+
+  .dict-title {
+    font-size: 24px;
+    padding-top: 6px;
   }
-  
+
+  .welcome-section {
+    gap: 14px;
+  }
+
+  .dictPic {
+    width: 160px;
+  }
+
+  .dict-quote {
+    font-size: 14px;
+    max-width: 240px;
+    line-height: 1.3;
+  }
+
+  .dict-open-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .dictionary-wrapper .close-btn {
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  /* Translator styles */
+  .trans-title-section {
+    width: 120px;
+    height: 43px;
+    /* padding: 6px 4px; */
+    border-bottom-left-radius: 12px;
+  }
+
+  .trans-title {
+    font-size: 24px;
+    padding-top: 6px;
+  }
+
+  .translator-welcome-section {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .translatorPic {
+    width: 160px;
+  }
+
+  .translator-open-btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  .translator-wrapper .close-btn {
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
