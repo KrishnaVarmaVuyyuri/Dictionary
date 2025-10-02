@@ -1,10 +1,13 @@
+* {
+  font-family: verdana;
+}
+
 /* Translator Component Styles */
 .translator-container {
   max-width: 1024px;
   height: 300px;
   margin: 0 auto;
   padding: 18px;
-  /* border: 1px solid #708993; */
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
@@ -33,10 +36,16 @@
 
 /* Title */
 .translator-title {
-  font-size: 24px;
+  text-align: center;
+  max-width: 150px;
+  justify-self: center;
+  font-size: 18px;
+  padding: 10px 12px;
+  background-color: black;
   font-weight: 700;
-  color: #1f2937;
-  margin: 0;
+  color: white;
+  margin: auto;
+  border-radius: 6px;
 }
 
 /* Language Controls */
@@ -70,14 +79,14 @@
 }
 
 .translator-select:focus {
-  border-color: #14b8a6;
-  box-shadow: 0 0 0 1px #14b8a6;
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
 }
 
 /* Swap Button */
 .translator-swap-button {
   padding: 12px;
-  border: 1px solid #a7f3d0;
+  border: 1px solid #000000;
   background-color: #ffffff;
   color: #374151;
   border-radius: 8px;
@@ -91,8 +100,8 @@
 }
 
 .translator-swap-button:hover {
-  background-color: #f0fdfa;
-  border-color: #14b8a6;
+  background-color: #ffffff;
+  border-color: #000000;
 }
 
 /* Text Input Area */
@@ -110,8 +119,8 @@
 }
 
 .translator-textarea:focus {
-  border-color: #14b8a6;
-  box-shadow: 0 0 0 1px #14b8a6;
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
 }
 
 .translator-textarea::placeholder {
@@ -122,7 +131,7 @@
 .translator-button {
   width: 100%;
   padding: 12px 24px;
-  background-color: #0d9488;
+  background-color: #000000;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -133,7 +142,7 @@
 }
 
 .translator-button:hover:not(:disabled) {
-  background-color: #0f766e;
+  background-color: #000000;
 }
 
 .translator-button:disabled {
@@ -169,6 +178,7 @@
 .translator-output {
   min-height: 192px;
   padding: 16px;
+  margin-top: 44px;
   background-color: #f9fafb;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -189,236 +199,172 @@
 }
 
 /* ========================================
-   MOBILE & TABLET RESPONSIVE STYLES
+   RESPONSIVE STYLES
    ======================================== */
 
-/* 📱 Mobile Devices (320px - 480px) */
-@media (max-width: 480px) {
+/* Mobile: up to 768px */
+@media (max-width: 768px) {
   .translator-container {
     height: auto;
     min-height: 500px;
-    padding: 12px;
-    border-radius: 12px;
+    padding: 14px;
+    border-radius: 16px;
   }
-  
+
   .translator-grid {
-    gap: 20px;
+    gap: 22px;
   }
-  
+
   .translator-input-section {
     gap: 12px;
   }
-  
+
   .translator-title {
     font-size: 18px;
-    margin-bottom: 4px;
   }
-  
+
   .translator-controls {
-    flex-direction: column;
     gap: 12px;
-    align-items: stretch;
   }
-  
+
   .translator-label {
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 6px;
   }
-  
+
   .translator-select {
     padding: 10px;
     font-size: 13px;
   }
-  
-  .translator-swap-button {
-    width: 100%;
-    padding: 10px;
-    order: 2;
-  }
-  
-  .translator-textarea {
-    height: 80px;
-    padding: 10px;
-    font-size: 13px;
-  }
-  
-  .translator-button {
-    padding: 10px 20px;
-    font-size: 13px;
-  }
-  
-  .translator-output-section {
-    gap: 16px;
-  }
-  
-  .translator-output-title {
-    font-size: 16px;
-  }
-  
-  .translator-output {
-    min-height: 120px;
-    padding: 12px;
-    font-size: 13px;
-  }
-  
-  .translator-error {
-    padding: 10px;
-    font-size: 12px;
-  }
-}
 
-/* 📱 Large Mobile / Small Tablets (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .translator-container {
-    height: auto;
-    min-height: 550px;
-    padding: 16px;
-    border-radius: 16px;
-  }
-  
-  .translator-grid {
-    gap: 24px;
-  }
-  
-  .translator-input-section {
-    gap: 14px;
-  }
-  
-  .translator-title {
-    font-size: 20px;
-  }
-  
-  .translator-controls {
-    /* flex-wrap: wrap; */
-    gap: 12px;
-  }
-  
-  .translator-select-group {
-    flex: 1;
-    min-width: calc(50% - 30px);
-  }
-  
   .translator-swap-button {
     min-width: 44px;
     padding: 10px;
   }
-  
-  .translator-label {
-    font-size: 13px;
-  }
-  
-  .translator-select {
-    padding: 11px;
-    font-size: 13px;
-  }
-  
+
   .translator-textarea {
-    height: 90px;
-    padding: 11px;
+    height: 85px;
+    padding: 10px;
     font-size: 13px;
   }
-  
+
   .translator-button {
     padding: 11px 22px;
     font-size: 13px;
   }
-  
+
   .translator-output-section {
-    gap: 20px;
+    gap: 18px;
   }
-  
+
   .translator-output-title {
     font-size: 18px;
   }
-  
+
   .translator-output {
-    min-height: 150px;
-    padding: 14px;
+    min-height: 140px;
+    margin-top: 0;
+    padding: 13px;
     font-size: 13px;
   }
-  
+
   .translator-error {
-    padding: 11px;
+    padding: 10px;
     font-size: 13px;
   }
 }
 
-/* 💻 Tablets (769px - 1023px) */
-@media (min-width: 769px) and (max-width: 1023px) {
+/* Small Mobile: up to 480px */
+@media (max-width: 480px) {
   .translator-container {
-    height: auto;
-    min-height: 400px;
-    padding: 20px;
-    border-radius: 18px;
+    min-height: 480px;
+    padding: 12px;
+    border-radius: 12px;
   }
-  
+
   .translator-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 18px;
   }
-  
+
   .translator-input-section {
-    gap: 16px;
+    gap: 10px;
   }
-  
+
   .translator-title {
-    font-size: 22px;
+    font-size: 18px;
   }
-  
+
   .translator-controls {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .translator-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .translator-select {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .translator-swap-button {
+    width: 100%;
+    padding: 9px;
+    order: 2;
+  }
+
+  .translator-textarea {
+    height: 75px;
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .translator-button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .translator-output-section {
     gap: 14px;
   }
-  
-  .translator-textarea {
-    height: 100px;
-  }
-  
-  .translator-output-section {
-    gap: 22px;
-  }
-  
-  .translator-output {
-    min-height: 160px;
-  }
-}
 
-/* 🖥️ Small Laptops (1024px - 1280px) - Fine-tune existing layout */
-@media (min-width: 1024px) and (max-width: 1280px) {
-  .translator-container {
-    padding: 20px;
-  }
-  
-  .translator-grid {
-    gap: 28px;
-  }
-  
-  .translator-title {
-    font-size: 22px;
-  }
-  
   .translator-output-title {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .translator-output {
+    min-height: 110px;
+    padding: 11px;
+    margin-top: 0;
+    font-size: 12px;
+  }
+
+  .translator-error {
+    padding: 9px;
+    font-size: 12px;
   }
 }
 
-/* Landscape Mode Optimization for Mobile */
+/* Landscape Mode Optimization */
 @media (max-height: 500px) and (orientation: landscape) {
   .translator-container {
     height: 85%;
     max-height: none;
-    padding: 20px;
+    padding: 16px;
     overflow-y: auto;
   }
-  
+
   .translator-textarea {
     height: 60px;
+  }
 
-  }
-  
   .translator-output {
-    min-height: 170px;
+    min-height: 180px;
   }
-  
+
   .translator-input-section,
   .translator-output-section {
     gap: 8px;
@@ -431,7 +377,7 @@
     border: 1px solid #000;
     box-shadow: none;
   }
-  
+
   .translator-button,
   .translator-swap-button {
     display: none;

@@ -100,12 +100,12 @@ export default function Translator() {
     <div className="translator-container">
       {/* Two-column layout */}
       <div className="translator-grid">
-        
+
         {/* Left Column - Input Section */}
         <div className="translator-input-section">
           {/* Title */}
           <h3 className="translator-title">Translator</h3>
-          
+
           {/* Language Controls */}
           <div className="translator-controls">
             <div className="translator-select-group">
@@ -176,8 +176,8 @@ export default function Translator() {
 
         {/* Right Column - Output Section */}
         <div className="translator-output-section">
-          <h4 className="translator-output-title">Translation</h4>
-          
+
+
           {/* Output Area - Always visible */}
           <div className="translator-output">
             {translated ? (
