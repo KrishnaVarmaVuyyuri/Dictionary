@@ -7,12 +7,14 @@ import Translator from '../../components/Translator/Translator';
 import { FaTimes } from 'react-icons/fa';
 import dictPic from '../../assets/dictionary-pic.png';
 import transPic from '../../assets/translator-pic.png'
+import Quiz from '../../components/Quiz/Quiz';
 // Add your translator image import here
 // import translatorPic from '../../assets/translator-pic.png';
 
 export default function Home() {
   const [showDictionary, setShowDictionary] = useState(false);
   const [showTranslate, setShowTranslate] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(false);
   const [searchWord, setSearchWord] = useState("");
   const [wordData, setWordData] = useState(null);
   const [favorites, setFavorites] = useState([]);
@@ -100,7 +102,7 @@ export default function Home() {
               <Favorites favorites={favorites} onRemove={removeFavorite} onSelect={handleSelectWord} />
             </div>
           </div>
-          
+
         )}
       </div>
 
@@ -149,8 +151,41 @@ export default function Home() {
       </div>
 
       {/* Third Section - You can add content here later */}
-      <div className='div3'>
-        {/* Add your third section content here */}
+      <div className={`div3 ${!showQuiz ? 'with-background' : ''}`}>
+        {!showQuiz ? (<>
+          <div className='quiz-title-section'>
+            <div className='quiz-title'>
+              Quiz
+            </div>
+          </div>
+          <div className="quiz-welcome-section">
+
+            <img src={transPic} className='translatorPic' alt="Quiz" />
+
+            <button
+              className='quiz-open-btn'
+              onClick={() => setShowQuiz(true)}
+            >
+              Open Quiz
+            </button>
+          </div>
+        </>
+
+        ) : (
+          <div className="quiz-wrapper">
+            <button
+              className="close-btn"
+              onClick={() => setShowQuiz(false)}
+              aria-label="Close Quiz"
+              title="Close"
+            >
+              <FaTimes />
+            </button>
+            <div className="quiz-content">
+              <Quiz />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

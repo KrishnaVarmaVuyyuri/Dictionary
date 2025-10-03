@@ -1,3 +1,6 @@
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .word-details {
   background-color: #ffffff;
   border: 1px solid #d1d5db; /* light gray */
