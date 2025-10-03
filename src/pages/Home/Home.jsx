@@ -7,9 +7,9 @@ import Translator from '../../components/Translator/Translator';
 import { FaTimes } from 'react-icons/fa';
 import dictPic from '../../assets/dictionary-pic.png';
 import transPic from '../../assets/translator-pic.png'
+import quizPic from '../../assets/quiz-pic.png'
 import Quiz from '../../components/Quiz/Quiz';
-// Add your translator image import here
-// import translatorPic from '../../assets/translator-pic.png';
+
 
 export default function Home() {
   const [showDictionary, setShowDictionary] = useState(false);
@@ -150,7 +150,7 @@ export default function Home() {
         )}
       </div>
 
-      {/* Third Section - You can add content here later */}
+      {/* Third Section  */}
       <div className={`div3 ${!showQuiz ? 'with-background' : ''}`}>
         {!showQuiz ? (<>
           <div className='quiz-title-section'>
@@ -160,7 +160,7 @@ export default function Home() {
           </div>
           <div className="quiz-welcome-section">
 
-            <img src={transPic} className='translatorPic' alt="Quiz" />
+            <img src={quizPic} className='quizPic' alt="Quiz" />
 
             <button
               className='quiz-open-btn'

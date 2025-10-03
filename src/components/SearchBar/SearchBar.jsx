@@ -10,7 +10,7 @@ export default function SearchBar({ onSearch }) {
 
   // Fetch word suggestions when input changes
   useEffect(() => {
-    const controller = new AbortController(); // ✅ cancel previous fetches
+    const controller = new AbortController(); // cancel previous fetches
     if (input.trim()) {
       fetch(`https://api.datamuse.com/sug?s=${encodeURIComponent(input)}&max=5`, { signal: controller.signal })
         .then((res) => res.json())
@@ -21,7 +21,7 @@ export default function SearchBar({ onSearch }) {
     } else {
       setSuggestions([]);
     }
-    return () => controller.abort(); // ✅ cleanup
+    return () => controller.abort(); // cleanup
   }, [input]);
  
   const handleSearch = (word) => {
@@ -31,7 +31,7 @@ export default function SearchBar({ onSearch }) {
       setInput(trimmed);
       setSuggestions([]);
       setShowSuggestions(false);
-      inputRef.current?.blur(); // ✅ remove focus after search
+      inputRef.current?.blur(); //remove focus after search
     }
   };
 

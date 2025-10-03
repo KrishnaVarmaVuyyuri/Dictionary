@@ -16,15 +16,15 @@ function Quiz() {
     const randomWords = shuffle(wordBank).slice(0, 5);
 
     const generated = randomWords.map((item) => {
-      const isSynonym = Math.random() > 0.5; // randomly ask synonym or antonym
+      const isSynonym = Math.random() > 0.5; 
       let correct, options;
 
       if (isSynonym && item.synonyms.length > 0) {
         correct = item.synonyms[0];
         options = shuffle([
           correct,
-          ...item.synonyms.slice(1, 2), // 1 more synonym if available
-          ...item.antonyms.slice(0, 2)   // 2 antonyms as distractors
+          ...item.synonyms.slice(1, 2), 
+          ...item.antonyms.slice(0, 2)   
         ]).slice(0, 4);
       } else if (item.antonyms.length > 0) {
         correct = item.antonyms[0];
@@ -58,7 +58,7 @@ function Quiz() {
       setScore((s) => s + 1);
     }
 
-    // Move to next question after 1.5 seconds
+    
     setTimeout(() => {
       setCurrent((c) => c + 1);
       setSelectedAnswer(null);

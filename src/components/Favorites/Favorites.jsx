@@ -19,7 +19,7 @@ export default function Favorites({ favorites, onRemove, onSelect }) {
             <button
               className="remove-button"
               onClick={(e) => {
-                e.stopPropagation();  // ✅ prevent parent click
+                e.stopPropagation(); 
                 onRemove(word);
               }}
               aria-label={`Remove ${word} from favorites`}
